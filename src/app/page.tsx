@@ -125,7 +125,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="section-head" style={{ marginBottom: "2rem" }}>
+          <div className="section-head">
             <div>
               <div className="eyebrow">Специальности</div>
               <h2 className="section-title">Направления подготовки</h2>

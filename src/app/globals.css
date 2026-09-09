@@ -742,12 +742,15 @@ html.theme-switching *::after {
 .quick-wrap {
   position: relative;
   z-index: 5;
+  background: var(--bg);
 }
 .quick-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.1rem;
   margin-top: -2.6rem;
+  position: relative;
+  z-index: 6;
 }
 .quick-card {
   display: flex;
@@ -958,6 +961,7 @@ html.theme-switching *::after {
   color: #fff;
   background: var(--grad-band);
   box-shadow: var(--shadow-md);
+  margin-bottom: 2.5rem;
 }
 .band::after {
   content: "";
