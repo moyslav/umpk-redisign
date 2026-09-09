@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HERO_BADGES, NEWS, SITE, SPECIALTIES } from "@/data/site";
+import { NewsCard } from "@/components/NewsCard";
+import { SpecialtyCard } from "@/components/SpecialtyCard";
 import { Icon } from "@/components/icons";
 
 const YEARS = new Date().getFullYear() - SITE.founded;
@@ -106,29 +107,7 @@ export default function Home() {
           </div>
           <div className="news-grid">
             {NEWS.map((n) => (
-              <article className="news-card" key={n.title}>
-                {n.img ? (
-                  <div className="news-thumb">
-                    <Image
-                      src={n.img}
-                      alt={n.title}
-                      fill
-                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                    />
-                  </div>
-                ) : null}
-                <div className="news-body">
-                  <span className="news-date">
-                    <Icon name="calendar" size={14} />
-                    {n.date}
-                  </span>
-                  <h3>{n.title}</h3>
-                  <p>{n.text}</p>
-                  <Link className="news-link link-more" href="/novosti">
-                    Читать дальше <Icon name="arrow-right" size={15} />
-                  </Link>
-                </div>
-              </article>
+              <NewsCard key={n.title} item={n} />
             ))}
           </div>
         </div>
@@ -161,17 +140,7 @@ export default function Home() {
           </div>
           <div className="spec-grid">
             {SPECIALTIES.map((s) => (
-              <Link key={s.code} className="spec-card" href="/specialnosti">
-                <span className="spec-code">{s.code}</span>
-                <h3>{s.name}</h3>
-                <span className="spec-meta">
-                  <span>{s.short}</span>
-                  <span>{s.level}</span>
-                </span>
-                <span className="spec-arrow">
-                  <Icon name="arrow-right" size={18} />
-                </span>
-              </Link>
+              <SpecialtyCard key={s.code} item={s} href="/specialnosti" />
             ))}
           </div>
         </div>

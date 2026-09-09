@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const themeScript = `(function(){try{var t=localStorage.getItem('umpk-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}var d=document.documentElement;d.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#1c1c1e':'#f5f5f7');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://umpk.example.ru"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://umpk.example.ru"),
   title: {
     default: "ГБПОУ УМПК — Уфимский многопрофильный профессиональный колледж",
     template: "%s — ГБПОУ УМПК",

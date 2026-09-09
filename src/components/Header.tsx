@@ -68,6 +68,16 @@ export default function Header() {
     return () => document.body.classList.remove("no-scroll");
   }, [drawerOpen]);
 
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const mq = window.matchMedia("(min-width: 1180px)");
+    const onChange = (e: MediaQueryListEvent) => {
+      if (e.matches) setDrawerOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, [drawerOpen]);
+
   const togglePanel = (slug: string) =>
     setOpenPanel((cur) => (cur === slug ? null : slug));
 

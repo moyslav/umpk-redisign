@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CAT_INTRO, MENU, NEWS, PAGE_TEXT, SITE, SPECIALTIES } from "@/data/site";
+import { NewsCard } from "@/components/NewsCard";
+import { SpecialtyCard } from "@/components/SpecialtyCard";
 import { Icon } from "@/components/icons";
 
 type SlugParams = { params: Promise<{ slug: string }> };
@@ -26,13 +27,13 @@ function findOwner(slug: string) {
 }
 
 function titleFor(slug: string): { title: string; icon?: string } {
+  const txt = PAGE_TEXT[slug];
+  if (txt) return { title: txt.title };
   const cat = MENU.find((c) => c.slug === slug);
   if (cat) return { title: cat.label };
   const owner = findOwner(slug);
   const item = owner?.items.find((i) => i.slug === slug);
   if (item) return { title: item.t };
-  const txt = PAGE_TEXT[slug];
-  if (txt) return { title: txt.title };
   return { title: slug };
 }
 
@@ -146,14 +147,7 @@ function SpecialtiesPage() {
       </div>
       <div className="spec-grid" style={{ marginBottom: "3rem" }}>
         {SPECIALTIES.map((s) => (
-          <div className="spec-card" key={s.code}>
-            <span className="spec-code">{s.code}</span>
-            <h3>{s.name}</h3>
-            <span className="spec-meta">
-              <span>{s.short}</span>
-              <span>{s.level}</span>
-            </span>
-          </div>
+          <SpecialtyCard key={s.code} item={s} />
         ))}
       </div>
       <Link className="btn btn-primary" href="/plan-priema">
@@ -174,26 +168,7 @@ function NewsPage() {
       </div>
       <div className="news-grid" style={{ marginBottom: "3rem" }}>
         {NEWS.map((n) => (
-          <article className="news-card" key={n.title}>
-            {n.img ? (
-              <div className="news-thumb">
-                <Image
-                  src={n.img}
-                  alt={n.title}
-                  fill
-                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                />
-              </div>
-            ) : null}
-            <div className="news-body">
-              <span className="news-date">
-                <Icon name="calendar" size={14} />
-                {n.date}
-              </span>
-              <h3>{n.title}</h3>
-              <p>{n.text}</p>
-            </div>
-          </article>
+          <NewsCard key={n.title} item={n} showMore={false} />
         ))}
       </div>
     </div>
