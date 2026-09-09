@@ -743,12 +743,13 @@ html.theme-switching *::after {
   position: relative;
   z-index: 5;
   background: var(--bg);
+  padding: clamp(3rem, 6vw, 5rem) 0;
 }
 .quick-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.1rem;
-  margin-top: -2.6rem;
+  gap: 1.2rem;
+  margin-top: 0;
   position: relative;
   z-index: 6;
 }
@@ -1289,32 +1290,32 @@ html.theme-switching *::after {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.7fr repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2.4rem;
-  padding: 3.2rem 0 2.6rem;
+  gap: 2rem;
+  padding: 2.1rem 0 1.5rem;
 }
 .footer-brand p {
   color: var(--ink-2);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   max-width: 32ch;
-  margin: 0.8rem 0 0;
+  margin: 0.6rem 0 0;
 }
 .footer-col h4 {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-3);
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
 }
 .footer-col ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.55rem;
+  gap: 0.42rem;
 }
 .footer-col a {
   color: var(--ink-2);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   transition: color 0.18s ease-in-out;
 }
 .footer-col a:hover {
@@ -1325,11 +1326,11 @@ html.theme-switching *::after {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  padding: 1.2rem 0 1.6rem;
+  gap: 0.7rem;
+  padding: 0.8rem 0 1rem;
   border-top: 1px solid var(--line);
   color: var(--ink-3);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
 }
 .socials {
   display: flex;
@@ -1340,7 +1341,7 @@ html.theme-switching *::after {
 @media (max-width: 1024px) {
   .quick-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: -1.6rem;
+    margin-top: 0;
   }
   .news-grid, .spec-grid, .why-grid, .stats {
     grid-template-columns: repeat(2, 1fr);
