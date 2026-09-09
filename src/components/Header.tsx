@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MENU, SITE } from "@/data/site";
@@ -86,7 +87,20 @@ export default function Header() {
       <div className="container-app header-inner">
         <Link href="/" className="brand" aria-label={`${SITE.full} — на главную`}>
           <span className="brand-mark" aria-hidden="true">
-            У
+            <Image
+              src="/logo-light.jpg"
+              alt=""
+              width={38}
+              height={38}
+              className="brand-logo brand-logo-light"
+            />
+            <Image
+              src="/logo-dark.jpg"
+              alt=""
+              width={38}
+              height={38}
+              className="brand-logo brand-logo-dark"
+            />
           </span>
           <span className="brand-text">
             <strong>{SITE.short}</strong>
@@ -196,7 +210,20 @@ export default function Header() {
         <div className="drawer-head">
           <span className="d-brand">
             <span className="brand-mark" aria-hidden="true">
-              У
+              <Image
+                src="/logo-light.jpg"
+                alt=""
+                width={38}
+                height={38}
+                className="brand-logo brand-logo-light"
+              />
+              <Image
+                src="/logo-dark.jpg"
+                alt=""
+                width={38}
+                height={38}
+                className="brand-logo brand-logo-dark"
+              />
             </span>
             <span>{SITE.short}</span>
           </span>

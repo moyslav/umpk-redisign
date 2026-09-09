@@ -320,6 +320,22 @@
   font-size: 1.02rem;
   letter-spacing: 0;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.brand-logo-dark {
+  display: none;
+}
+html[data-theme="dark"] .brand-logo-light {
+  display: none;
+}
+html[data-theme="dark"] .brand-logo-dark {
+  display: block;
 }
 .brand-text {
   display: flex;

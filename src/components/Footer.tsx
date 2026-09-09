@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MENU, SITE } from "@/data/site";
 
@@ -30,7 +31,20 @@ export default function Footer() {
           <div className="footer-brand">
             <Link href="/" className="brand">
               <span className="brand-mark" aria-hidden="true">
-                У
+                <Image
+                  src="/logo-light.jpg"
+                  alt=""
+                  width={38}
+                  height={38}
+                  className="brand-logo brand-logo-light"
+                />
+                <Image
+                  src="/logo-dark.jpg"
+                  alt=""
+                  width={38}
+                  height={38}
+                  className="brand-logo brand-logo-dark"
+                />
               </span>
               <span className="brand-text">
                 <strong>{SITE.short}</strong>
