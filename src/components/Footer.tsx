@@ -87,10 +87,12 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © 2014–{year} {SITE.short}
-          </span>
-          <span>{SITE.full}</span>
+          <div className="footer-meta">
+            <span>
+              © 2014–{year} {SITE.short}
+            </span>
+            <span>{SITE.full}</span>
+          </div>
           <span className="socials">
             {SITE.socials.map((s) => (
               <a

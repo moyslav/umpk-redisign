@@ -1322,19 +1322,25 @@ html.theme-switching *::after {
   color: var(--accent);
 }
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
   gap: 0.7rem;
   padding: 0.8rem 0 1rem;
   border-top: 1px solid var(--line);
   color: var(--ink-3);
   font-size: 0.8rem;
 }
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 .socials {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
 /* ---------- Адаптив ---------- */

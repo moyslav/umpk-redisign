@@ -46,6 +46,7 @@ export const SITE = {
     { name: "ВКонтакте", url: "https://vk.com" },
     { name: "Одноклассники", url: "https://ok.ru" },
     { name: "Telegram", url: "https://t.me" },
+    { name: "Max", url: "https://max.ru" },
   ],
   founded: 2014,
 };
